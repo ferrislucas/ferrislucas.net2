@@ -1,0 +1,49 @@
+---
+import { marked } from 'marked';
+import Button from './Button.astro';
+import siteConfig from '../data/site-config';
+
+const hero = siteConfig.hero;
+---
+
+{
+    (hero?.title || hero?.image?.src || hero?.text || (hero?.actions && hero.actions.length > 0)) && (
+        <section class="w-full flex flex-col gap-8 mb-16 sm:mb-24">
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+                {hero.image?.src && (
+                    <figure class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
+                        <img 
+                            class="w-full h-full object-cover rounded-lg shadow-lg" 
+                            src={hero.image.src} 
+                            loading="lazy" 
+                            decoding="async" 
+                            alt={hero.image.alt || ''} 
+                        />
+                        {hero.image.caption && (
+                            <figcaption class="mt-2 text-sm text-center italic">
+                                {hero.image.caption}
+                            </figcaption>
+                        )}
+                    </figure>
+                )}
+                <div class="flex flex-col gap-6">
+                    {hero.title && (
+                        <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight">
+                            {hero.title}
+                        </h1>
+                    )}
+                    {hero.text && (
+                        <div class="max-w-none prose prose-dante sm:prose-lg" set:html={marked.parse(hero.text)} />
+                    )}
+                </div>
+            </div>
+            {hero.actions && hero.actions.length > 0 && (
+                <div class="flex flex-wrap gap-4">
+                    {hero.actions.map((action) => (
+                        <Button href={action.href}>{action.text}</Button>
+                    ))}
+                </div>
+            )}
+        </section>
+    )
+}

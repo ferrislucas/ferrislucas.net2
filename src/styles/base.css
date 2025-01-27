@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --color-text-main: 23 23 23;
+    --color-bg-main: 255 255 255;
+    --color-bg-muted: 245 245 245;
+    --color-border-main: 229 229 229;
+}
+
+.dark {
+    --color-text-main: 250 250 250;
+    --color-bg-main: 23 23 23;
+    --color-bg-muted: 38 38 38;
+    --color-border-main: 38 38 38;
+}
+
+@layer base {
+    body {
+        @apply bg-main text-main;
+    }
+}

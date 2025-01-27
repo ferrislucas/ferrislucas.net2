@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import siteConfig from '../data/site-config';
+---
+
+<BaseLayout description={siteConfig.description} image={siteConfig.image}>
+    <Hero />
+    <div class="prose prose-dante dark:prose-invert">
+        <div class="mb-16 sm:mb-24">
+            <h2 class="mb-8 text-xl font-serif italic sm:text-2xl">About Me</h2>
+            <p class="mb-6">
+                Software engineer and technology leader with a passion for building elegant solutions to complex problems.
+            </p>
+        </div>
+        
+        <div class="mb-16 sm:mb-24">
+            <h2 class="mb-8 text-xl font-serif italic sm:text-2xl">Contact</h2>
+            <ul class="list-none p-0">
+                <li class="mb-2">
+                    <a href="https://github.com/ferrislucas" class="no-underline hover:underline">GitHub</a>
+                </li>
+                <li class="mb-2">
+                    <a href="https://www.linkedin.com/in/ferris-lucas" class="no-underline hover:underline">LinkedIn</a>
+                </li>
+                <li class="mb-2">
+                    <a href="mailto:ferris@mydayoff.net" class="no-underline hover:underline">Email</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</BaseLayout>
