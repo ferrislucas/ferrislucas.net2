@@ -5,8 +5,8 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://ferrislucas.net',
-    integrations: [
+  site: 'https://ferrislucas.github.io',
+  integrations: [
         mdx(),
         sitemap(),
         tailwind({
