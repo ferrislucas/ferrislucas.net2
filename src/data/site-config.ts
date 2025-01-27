@@ -28,11 +28,11 @@ const siteConfig: SiteConfig = {
     title: "Ferris Lucas - Personal Website",
     hero: {
         title: "Hey, I'm Ferris 👋",
-        text: "Software engineer and technology leader with a passion for building elegant solutions to complex problems. Currently exploring generative AI and its impact on software development.",
+        text: "I'm a software engineer focused on building thoughtful tools at the intersection of AI and software development. With deep experience across the full stack—particularly PostgreSQL, Ruby on Rails, and Vue—my current passion lies in exploring how AI can enhance developer workflows.",
         image: {
             src: "/images/ferris-profile.jpg",
             alt: "Ferris Lucas wearing a tin foil hat",
-            caption: "Tin foil protective headwear"
+            caption: ""
         },
         actions: [
             {
